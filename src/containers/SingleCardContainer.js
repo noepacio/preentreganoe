@@ -14,9 +14,10 @@ const SingleCardContainer = ({ id }) => {
   return (
     <>
       {showLoading && <p>LOADING....</p>}
-      {!showLoading && <ShowSingleCard show={show} />}
+      {!showLoading && <ShowSingleCard show={show} imageUrl="URL_DE_LA_IMAGEN_A_CAMBIAR" />}
     </>
   );
 };
 
 export default SingleCardContainer;
+
