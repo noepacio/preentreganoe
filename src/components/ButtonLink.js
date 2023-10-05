@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const ButtonLink = ({ id }) => {
-  return <Link className=' bg-lime-700 max-w-[120px] border border-slate-300 border-solid py-2 px-3 rounded-3xl hover:bg-lime-400' href={`/show/${id}`}>View Show</Link>;
+  return <Link className=' bg-black max-w-[120px] text-white border-solid py-2 px-2 rounded-2xl hover:bg-white hover:text-black hover:border-solid border-black border-2' href={`/show/${id}`}>View Movie</Link>;
 };
 
 export default ButtonLink;

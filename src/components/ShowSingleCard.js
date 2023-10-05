@@ -1,21 +1,32 @@
 import Image from 'next/image';
+import Footer from './Footer';
 
 const ShowSingleCard = ({ show }) => {
   return (
-    <div className='relative bg-gray-900 mb-0'>
-      <h2 className='flex justify-between items-center h-14 bg-gray-900 mt-0 px-5 text-white ml-4 pt-12'>{show.name}</h2>
-      <div className='relative text-center'>
-        <h2 className='absolute items-center left-80 text-white text-sm bg-opacity-75 py-2 px-5 '>Type: {show.type}</h2>
-        <h2 className='absolute items-center left-80 text-white text-sm bg-opacity-75 py-10 px-5 '>Language: {show.language}</h2>
+    <div className='relative mb-4 p-4 border border-gray-200 rounded-lg shadow-lg'>
+      <h2 className='text-2xl font-bold mb-2'>{show.name}</h2>
+      <div className='flex flex-col space-y-2'>
+        <div className='bg-gray-200 bg-opacity-75 p-2 rounded-md'>
+            <p className='text-sm font-semibold'>Type:</p>
+            <p className='text-sm'>{show.type}</p>
+        </div>
+        <div className='bg-gray-200 bg-opacity-75 p-2 rounded-md'>
+            <p className='text-sm font-semibold'>Language:</p>
+            <p className='text-sm'>{show.language}</p>
+        </div>
       </div>
       {show.image && (
-        <Image className='flex items-center ml-8'
-          src={show.image?.original}
-          width={300}
-          height={600}
-          alt={show.name}
-        />
+        <div className='mt-4'>
+          <Image
+            src={show.image?.original}
+            width={300}
+            height={600}
+            alt={show.name}
+            className='rounded-md'
+          />
+          </div>
       )}
+      <Footer></Footer>
     </div>
   );
 };
